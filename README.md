@@ -1,4 +1,4 @@
-# FREE PDF Reader
+# Free PDF Reader
 
 A Free PDF Reader For Android 
 
