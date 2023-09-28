@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:pdf_reader/business_logic/pick_pdf_files/pick_pdf_files.dart';
-import '../../../pdf_view/pdf_view.dart';
+import 'package:provider/provider.dart';
+import '../../../pdf_viewer/pdf_view.dart';
 
 class PickPdfFile extends StatelessWidget {
   const PickPdfFile({super.key});
@@ -9,9 +9,10 @@ class PickPdfFile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //need the PickPdfFilesFromDevice dependency here
-    final selectPdf = Get.put(PickPdfFilesFromDevice());
+    final selectPdf = Provider.of<PickPdfFilesFromDevice>(context);
 
-    return IconButton(
+    return MaterialButton(
+      color: Colors.blueAccent,
         onPressed: () async {
           ///await the pickPDF() method to complete from the
           ///PickPdfFilesFromDevice()
@@ -21,6 +22,6 @@ class PickPdfFile extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const ShowPdfToUser()));
         },
-        icon: const Icon(Icons.add));
+        child: const Text("Select PDF File", style: TextStyle(color: Colors.white),));
   }
 }

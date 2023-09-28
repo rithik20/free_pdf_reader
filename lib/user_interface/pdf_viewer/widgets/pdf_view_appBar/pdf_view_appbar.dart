@@ -10,6 +10,11 @@ class PDFViewAppBarClass{
           Navigator.pop(context);
         }, icon: const Icon(Icons.arrow_back));
       }),
+      actions: [
+        IconButton(onPressed: (){
+
+        }, icon: const Icon(Icons.menu))
+      ],
     );
   }
 }

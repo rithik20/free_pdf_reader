@@ -1,6 +1,6 @@
-import 'package:get/get.dart';
+import 'package:flutter/cupertino.dart';
 
-class PdfViewState extends GetxController{
+class PdfViewState extends ChangeNotifier{
 
   int defaultPage = 0;
 
@@ -9,11 +9,11 @@ class PdfViewState extends GetxController{
   void changePageNumber(int page){
 
     defaultPage = page;
-    update();
+    notifyListeners();
   }
 
   void changeThemeMode(bool value){
     nightMode = value;
-    update();
+    notifyListeners();
   }
 }

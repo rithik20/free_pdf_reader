@@ -1,10 +1,11 @@
+import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:get/get.dart';
 import 'package:pdf_reader/user_interface/home_page/widgets/body/pick_pdf_button.dart';
 
 ///this class is for user to pick pdf files from the User's Device
-class PickPdfFilesFromDevice extends GetxController {
-  String pdfPath = "";
+class PickPdfFilesFromDevice{
+
+  File pdfPath = File("");
 
   ///call this method to select pdf files from the User's Device
   ///this method is called in the [PickPdfFile]
@@ -15,9 +16,7 @@ class PickPdfFilesFromDevice extends GetxController {
     if (result != null) {
       ///if the result in not null then change the path
       ///of the pdf
-      pdfPath = result.files.single.path!;
+      pdfPath = File(result.files.single.path!);
     }
-
-    update();
   }
 }
