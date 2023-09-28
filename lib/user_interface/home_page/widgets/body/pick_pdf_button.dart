@@ -20,9 +20,11 @@ class PickPdfFile extends StatelessWidget {
 
           if (!context.mounted) return;
 
-          ///then navigate to the ShowPdfToUser Widget
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ShowPdfToUser()));
+          if (selectPdf.pdfPath.path.isNotEmpty) {
+            ///then navigate to the ShowPdfToUser Widget
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ShowPdfToUser()));
+          }
         },
         child: const Text(
           "Select PDF File",

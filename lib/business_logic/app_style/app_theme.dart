@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_reader/main.dart';
 
 class AppThemeLogic extends ChangeNotifier{
 
-  bool switchState = false;
-  ThemeData themeData = ThemeData.light(useMaterial3: true);
+  bool switchState = appTheme;
 
   void changeTheme(bool value){
 
     if(value == true){
       switchState = true;
-      themeData = ThemeData.dark(useMaterial3: true);
     }else{
       switchState = false;
-      themeData = ThemeData.light(useMaterial3: true);
     }
     notifyListeners();
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_reader/business_logic/app_style/app_theme.dart';
+import 'package:pdf_reader/business_logic/shared_preferences/app_theme_store.dart';
 import 'package:provider/provider.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -7,6 +8,8 @@ class SettingsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final themeSet = Provider.of<AppThemeToLocalStorage>(context);
     return Column(
       children: [
         Row(
@@ -17,8 +20,9 @@ class SettingsBody extends StatelessWidget {
               builder: (context, switchState, child) {
                 return Switch(
                     value: switchState.switchState,
-                    onChanged: (value){
+                    onChanged: (value) async{
                       switchState.changeTheme(value);
+                      await themeSet.addThemeToStorage(value);
                     }
                 );
               }

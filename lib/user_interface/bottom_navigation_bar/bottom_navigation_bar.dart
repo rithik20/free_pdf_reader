@@ -8,32 +8,30 @@ class BottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final currentIndexNumber = Provider.of<BottomNavigationIndexNumber>(context);
+    final currentIndexNumber =
+        Provider.of<BottomNavigationIndexNumber>(context);
     final navigation = Provider.of<BottomNavigationWidgetState>(context);
 
     return Consumer<BottomNavigationIndexNumber>(
-      builder: (context, indexNumber, child) {
-        return BottomNavigationBar(
-            selectedItemColor: Colors.indigo,
-
-            currentIndex: currentIndexNumber.indexNumber,
-            items: const [
+        builder: (context, indexNumber, child) {
+      return BottomNavigationBar(
+        selectedItemColor: Colors.indigo,
+        currentIndex: currentIndexNumber.indexNumber,
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.book), label: "PDF"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: "Settings"),
         ],
-          onTap: (index){
-              indexNumber.changeIndex(index);
+        onTap: (index) {
+          indexNumber.changeIndex(index);
 
-              if(currentIndexNumber.indexNumber == 0){
-
-                navigation.navigateToHomePage();
-              }else{
-                navigation.navigateToSettings();
-              }
-          },
-        );
-      }
-    );
+          if (currentIndexNumber.indexNumber == 0) {
+            navigation.navigateToHomePage();
+          } else {
+            navigation.navigateToSettings();
+          }
+        },
+      );
+    });
   }
 }
