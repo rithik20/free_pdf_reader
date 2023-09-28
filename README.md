@@ -2,13 +2,7 @@
 
 A Free PDF Reader For Android 
 
-<<<<<<< HEAD
 Users can Read any PDF File From their Device Storage
-
-# ScreenShots
-
-=======
-Users can Read any PDF File From Their Device Storage 
 
 # ScreenShots
 ![Screenshot_2023-09-28-14-48-42-978_com freepdfreader pdf_reader](https://github.com/rithik20/free_pdf_reader/assets/96861390/f280be06-e7a3-4efc-8645-798a7716120c)
