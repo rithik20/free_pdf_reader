@@ -5,7 +5,6 @@ import 'package:pdf_reader/business_logic/permission_handler/storage_permission_
 import 'package:pdf_reader/business_logic/pick_pdf_files/pick_pdf_files.dart';
 import 'package:pdf_reader/business_logic/shared_preferences/app_theme_store.dart';
 import 'package:pdf_reader/business_logic/state_management/pdf_view_state_management/pdf_view_state.dart';
-import 'package:pdf_reader/user_interface/pdf_viewer/widgets/pdf_view_appBar/pdf_view_appbar.dart';
 import 'package:pdf_reader/user_interface/storage_permission_page/storage_permission_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +37,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(create: (context) => PDFViewAppBarClass()),
         Provider(create: (context) => PickPdfFilesFromDevice()),
         Provider(create: (context) => AppThemeToLocalStorage()),
         ChangeNotifierProvider(create: (context) => PdfViewState()),
