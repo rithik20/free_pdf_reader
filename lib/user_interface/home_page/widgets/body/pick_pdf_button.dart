@@ -12,16 +12,21 @@ class PickPdfFile extends StatelessWidget {
     final selectPdf = Provider.of<PickPdfFilesFromDevice>(context);
 
     return MaterialButton(
-      color: Colors.blueAccent,
+        color: Colors.blueAccent,
         onPressed: () async {
           ///await the pickPDF() method to complete from the
           ///PickPdfFilesFromDevice()
           await selectPdf.pickPDF();
+
           if (!context.mounted) return;
+
           ///then navigate to the ShowPdfToUser Widget
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const ShowPdfToUser()));
         },
-        child: const Text("Select PDF File", style: TextStyle(color: Colors.white),));
+        child: const Text(
+          "Select PDF File",
+          style: TextStyle(color: Colors.white),
+        ));
   }
 }

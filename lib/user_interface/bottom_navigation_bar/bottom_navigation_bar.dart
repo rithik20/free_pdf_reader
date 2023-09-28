@@ -15,7 +15,7 @@ class BottomNavigation extends StatelessWidget {
     return Consumer<BottomNavigationIndexNumber>(
       builder: (context, indexNumber, child) {
         return BottomNavigationBar(
-            selectedItemColor: Colors.red,
+            selectedItemColor: Colors.indigo,
 
             currentIndex: currentIndexNumber.indexNumber,
             items: const [

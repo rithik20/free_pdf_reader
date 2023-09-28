@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 
-class PDFViewAppBarClass{
-
-  PreferredSizeWidget pdfViewAppBarClass(BuildContext context){
-
+class PDFViewAppBarClass {
+  PreferredSizeWidget pdfViewAppBarClass(BuildContext context) {
     return AppBar(
-      leading: Builder(builder: (context){
-        return IconButton(onPressed: (){
-          Navigator.pop(context);
-        }, icon: const Icon(Icons.arrow_back));
+      leading: Builder(builder: (context) {
+        return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back));
       }),
-      actions: [
-        IconButton(onPressed: (){
-
-        }, icon: const Icon(Icons.menu))
-      ],
     );
   }
 }
