@@ -1,6 +1,6 @@
 ## Free PDF Reader
 
-An Open Source PDF Reader For Android 
+An Open Source PDF Reader For Android Made With Flutter
 
 # Features
 . Users can Read any PDF File From their Device Storage
