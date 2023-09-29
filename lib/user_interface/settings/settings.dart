@@ -13,7 +13,6 @@ class Settings extends StatelessWidget {
         title: const Text("Settings"),
       ),
       body: Container(
-        padding: const EdgeInsets.all(5.0),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: const SettingsBody()),
